@@ -1,0 +1,10 @@
+<p>user-list works!</p>
+<user-add (userAdded)="addUser($event)" ></user-add>
+
+<ul>
+    <li *ngFor="let user of users">
+      {{user.id}} - {{user.name}} - {{user.email}}  - <a [routerLink]="['/users/detail' , user.id]">Info</a>
+      <span> --- </span> <button (click)="deleteUser(user.id)">eliminar</button>
+    </li>
+  </ul>
+  
